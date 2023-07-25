@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body>
+    <%= data %>
+
+        <form action="/form/edit/<%=data._id%>?_method=PUT" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="firstname" value="<%= data.firstname%>">
+            <br>
+            [...]
+            </form>
+
+            <form action="/contact/delete/<%= data.id %>?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Supprimer la donnée</button>
+                </form>    
